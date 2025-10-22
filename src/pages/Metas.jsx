@@ -1,5 +1,3 @@
-// src/pages/Metas.jsx
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; 
 import CampoInput from '../components/CampoInput.jsx'; 
@@ -59,7 +57,7 @@ export default function PaginaMetas() {
     return (
         <div className="fundo-login-cadastro d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
 
-            {/* Cabeçalho Fixo (mantido o posicionamento absoluto para não interferir no fluxo) */}
+            {}
             <div style={{ position: 'absolute', top: '30px', left: '30px', width: '90%' }} className="d-flex align-items-center">
                 <Link to="/cadastro" style={{ color: 'var(--cor-branco)', marginRight: '20px' }}>
                     <i className="bi bi-arrow-left" style={{ fontSize: '1.5rem' }}></i>
@@ -67,19 +65,19 @@ export default function PaginaMetas() {
                 <img src={Logo} alt="Logo FinBal" style={{ height: '30px' }} />
             </div>
 
-            {/* Card do Formulário - Reduzindo py-5 para py-4 e usando a classe centralizada */}
+            {}
             <div className="card-form-central p-4 py-4 shadow" style={{ width: '100%', maxWidth: '450px' }}>
                 
-                {/* Título e Subtítulo - Reduzindo mb-5 para mb-3 */}
+                {}
                 <h2 className="fw-bold mb-2 text-center" style={{ color: '#000000', fontSize: '1.8rem' }}>Nos conte suas metas</h2>
                 <p className="text-muted text-center mb-3" style={{ fontSize: '1rem' }}>
                     Quais são seus sonhos financeiros? Vamos te ajudar a conquistá-los!
                 </p>
 
-                {/* Formulário */}
+                {}
                 <form onSubmit={handleSubmit}>
                     
-                    {/* Campos de Input (CampoInput e CampoSelecao já têm um espaçamento razoável) */}
+                    {}
                     <CampoInput
                         rotulo="PROJEÇÃO DE GASTO LIMITE MENSAL"
                         tipo="text" 
@@ -103,7 +101,7 @@ export default function PaginaMetas() {
                         placeholder="R$ XXXXX,XX"
                     />
 
-                    {/* Botão de Destaque (Salvar) - Reduzindo mt-5 para mt-4 */}
+                    {}
                     <div className="d-grid mt-4"> 
                         <Botao
                             texto="Salvar"
@@ -113,14 +111,14 @@ export default function PaginaMetas() {
                     </div>
                 </form>
 
-                {/* Separador "ou" - Reduzindo my-4 para my-3 */}
+                {}
                 <div className="d-flex align-items-center my-3">
                     <hr className="flex-grow-1 mx-2" style={{ borderColor: '#f2f2f2' }} />
                     <span className="text-muted">ou</span>
                     <hr className="flex-grow-1 mx-2" style={{ borderColor: '#f2f2f2' }} />
                 </div>
 
-                {/* Botão "Fazer isso depois" (Contorno) */}
+                {}
                 <div className="d-grid">
                     <button
                         type="button"

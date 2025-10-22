@@ -1,35 +1,38 @@
-// src/components/CampoPerfil.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CampoInput from './CampoInput.jsx'; 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function CampoPerfil({ rotulo, valorInicial, tipo = 'text', readOnly = false, onValorChange }) {
+    
     const [valor, setValor] = useState(valorInicial);
     const [isEditing, setIsEditing] = useState(false);
     
     const corDestaque = 'var(--cor-destaque)'; 
-
-    const handleSave = () => {
-        onValorChange(valor); 
-        setIsEditing(false);
-    };
     
-    const handleEditClick = () => {
-        if (readOnly) return; 
-        
-        if (isEditing) {
-            handleSave();
-        } else {
-            setIsEditing(true);
-        }
-    };
+    useEffect(() => {
+        setValor(valorInicial);
+    }, [valorInicial]);
     
     const handleInputChange = (novoValor) => {
         setValor(novoValor);
     };
+    const handleSave = () => {
+        if (!onValorChange || valor === valorInicial) {
+            setIsEditing(false); 
+            return;
+        }
+        onValorChange(valor);
+        setIsEditing(false);
+    };
 
-
-    // Estilo do botão Lápis/Check
+    const handleEditClick = () => {
+        if (isEditing) {
+            handleSave();
+        } else if (!readOnly) {
+            setIsEditing(true);
+        }
+    };
+    
     const estiloBotao = {
         backgroundColor: 'transparent',
         border: 'none',
@@ -39,7 +42,6 @@ export default function CampoPerfil({ rotulo, valorInicial, tipo = 'text', readO
         
         position: 'absolute',
         top: '60%', 
-        // ⭐️ AJUSTE FINAL: Move o botão 20px para a direita (fora do input) ⭐️
         right: '-35px', 
         transform: 'translateY(-50%)', 
         
@@ -50,34 +52,36 @@ export default function CampoPerfil({ rotulo, valorInicial, tipo = 'text', readO
         alignItems: 'center',
         opacity: readOnly ? 0.4 : 1, 
     };
+    
+    const iconeBotao = isEditing ? 'bi-check-lg' : 'bi-pencil-fill';
 
     return (
-        // Container com position: relative para aninhar o botão absoluto
         <div className="mb-3" style={{ position: 'relative' }}> 
-            
+            {}
             <CampoInput
                 rotulo={rotulo}
                 tipo={tipo}
-                valor={valor}
-                aoMudar={handleInputChange}
-                readOnly={!isEditing || readOnly}
+                valor={isEditing ? valor : valorInicial} 
+                aoMudar={handleInputChange} 
+                readOnly={!isEditing || readOnly} 
                 estiloRotulo={{ color: '#3c4043' }} 
                 estiloInput={{
                     color: '#000000', 
                     borderColor: isEditing ? corDestaque : '#ced4da', 
                     backgroundColor: 'transparent',
-                    paddingRight: '40px', // Garante que o texto não vá para debaixo do ícone
+                    paddingRight: '40px',
                 }}
             />
             
-            {/* Lápis/Check Button */}
-            <button
-                onClick={handleEditClick}
-                style={estiloBotao}
-                disabled={readOnly && !isEditing}
-            >
-                <i className={`bi bi-${isEditing ? 'check-lg' : 'pencil'}`}></i>
-            </button>
+            {}
+            {!readOnly && ( 
+                <button
+                    onClick={handleEditClick} 
+                    style={estiloBotao}
+                >
+                    <i className={`bi ${iconeBotao}`}></i>
+                </button>
+            )}
         </div>
     );
 }

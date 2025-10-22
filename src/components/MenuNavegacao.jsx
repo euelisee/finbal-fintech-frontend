@@ -1,4 +1,3 @@
-// src/components/MenuNavegacao.jsx
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Link } from 'react-router-dom'; 

@@ -5,9 +5,9 @@ import BotaoGoogle from '../components/BotaoGoogle.jsx';
 import Logo from '../assets/Logo.png';
 import { Link, useNavigate } from 'react-router-dom'; 
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { cadastrarUsuario } from '../services/usuarioService';
 
 const corDestaque = '#3B6CFF';
-
 const mascaraData = (valor) => {
     let apenasDigitos = valor.replace(/\D/g, ''); 
     apenasDigitos = apenasDigitos.substring(0, 8);
@@ -27,8 +27,7 @@ const estiloInputReduzido = { height: '40px', fontSize: '0.9rem' };
 
 export default function PaginaCadastro() {
     const navegar = useNavigate(); 
-    
-    const [nome, setNome] = useState('');
+    const [nomeCompleto, setNomeCompleto] = useState('');
     const [dataNascimento, setDataNascimento] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -38,11 +37,43 @@ export default function PaginaCadastro() {
         setDataNascimento(valorMascarado);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
-        console.log('Dados de Cadastro:', { nome, dataNascimento, email, senha });
-        navegar('/metas'); 
+        const partesNome = nomeCompleto.trim().split(/\s+/);
+        const nome = partesNome[0] || nomeCompleto;
+        const sobrenome = partesNome.slice(1).join(' ') || null; 
+        
+        const dataParaEnvio = dataNascimento.length === 10 ? dataNascimento : null; 
+        
+        const dadosParaEnvio = {
+            nome: nome,
+            sobrenome: sobrenome, 
+            email: email,
+            senha: senha,
+            telefone: null, 
+            cpf: null, 
+            
+            dataNascimento: dataParaEnvio,
+        };
+
+        try {
+            const resposta = await cadastrarUsuario(dadosParaEnvio);
+
+            console.log('Cadastro realizado com sucesso!', resposta);
+            
+            alert('Usuário cadastrado com sucesso! Redirecionando para Metas.');
+            navegar('/metas'); 
+
+        } catch (erro) {
+            console.error('Erro durante o cadastro:', erro);
+            
+            const mensagemErro = (erro.mensagem && typeof erro.mensagem === 'string') 
+                                ? erro.mensagem 
+                                : 'Erro ao tentar cadastrar. Verifique a conexão e tente novamente.';
+            
+            alert(`Falha no cadastro: ${mensagemErro}`);
+        }
     };
 
     const handleLoginGoogle = () => {
@@ -68,7 +99,8 @@ export default function PaginaCadastro() {
 
                     <form onSubmit={handleSubmit}>
 
-                        <CampoInput rotulo="Nome completo" tipo="text" valor={nome} aoMudar={setNome} estiloInput={estiloInputReduzido} />
+                        {}
+                        <CampoInput rotulo="Nome completo" tipo="text" valor={nomeCompleto} aoMudar={setNomeCompleto} estiloInput={estiloInputReduzido} />
 
                         <CampoInput
                             rotulo="Data de nascimento"

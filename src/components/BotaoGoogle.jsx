@@ -1,4 +1,3 @@
-// src/components/BotaoGoogle.jsx
 import React from 'react';
 import logoGoogle from '../assets/Logo-google.png'; 
 

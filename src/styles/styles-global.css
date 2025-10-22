@@ -1,4 +1,3 @@
-/* src/styles/styles-global.css */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 :root {
@@ -27,20 +26,15 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* CLASSE DE FUNDO PARA LOGIN/CADASTRO E INICIAL (DEGRADÊ LINEAR: ESCURO -> CLARO) */
 .fundo-login-cadastro {
   background: linear-gradient(180deg, var(--cor-degrade-escuro) 0%, var(--cor-degrade-claro) 100%) !important;
   color: var(--cor-branco) !important;
 }
-
-/* Classe de Fundo para a página de Perfil */
 .fundo-perfil {
   background-color: var(--cor-fundo-perfil) !important;
   color: #3c4043;
 }
 
-/* Estilo para o Card branco de login/cadastro, metas e saldo */
 .card-form-central {
     background-color: var(--cor-branco) !important;
     border-radius: 12px;
@@ -51,7 +45,6 @@ body {
     color: #3c4043; 
 }
 
-/* Estilos de Botão de Destaque */
 .btn-destaque {
     background-color: var(--cor-destaque) !important;
     border-color: var(--cor-destaque) !important;
@@ -59,9 +52,6 @@ body {
     font-size: 1rem;
     font-weight: bold;
 }
-
-
-/* ESTILOS GERAIS DA DASHBOARD */
 
 .card-base {
   background-color: var(--cor-card-dashboard);

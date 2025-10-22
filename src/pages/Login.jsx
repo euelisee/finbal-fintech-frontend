@@ -1,5 +1,3 @@
-// src/pages/Login.jsx
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; 
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -20,10 +18,8 @@ export default function Login() {
     };
 
     return (
-        // ⭐️ AJUSTE CRUCIAL: Removemos o paddingTop do estilo inline ⭐️
         <div className="fundo-login-cadastro d-flex flex-column" style={{ minHeight: '100vh' }}>
             
-            {/* ⭐️ AJUSTE: CabecalhoSimples agora está no fluxo, herdando o fundo degradê ⭐️ */}
             <CabecalhoSimples /> 
             
             <div className="container d-flex flex-column flex-grow-1">

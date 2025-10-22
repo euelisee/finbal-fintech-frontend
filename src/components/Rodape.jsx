@@ -1,8 +1,6 @@
-// src/components/Rodape.jsx
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Componente simples de rodapé
 export default function Rodape() {
   const anoAtual = new Date().getFullYear();
 

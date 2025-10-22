@@ -1,8 +1,6 @@
-// src/components/CardsDashboard.jsx
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-// Componente Base para todos os cards
 export const Card = ({ titulo, valor, detalhe, tipo, children, estiloExtra }) => {
     const corTitulo = "rgba(255, 255, 255, 0.7)";
     const tamanhoValor = tipo === "principal" ? "3rem" : "1.5rem";
@@ -38,7 +36,6 @@ export const Card = ({ titulo, valor, detalhe, tipo, children, estiloExtra }) =>
     );
 };
 
-// Componente: AcaoIcone
 export const AcaoIcone = ({ icone, texto }) => {
     
     const estiloTexto = { 
@@ -73,8 +70,6 @@ export const AcaoIcone = ({ icone, texto }) => {
         </div>
     );
 };
-
-// Componente: CategoriaCard
 export const CategoriaCard = ({ nome, progresso = 70 }) => {
     const iconeFinal = nome === 'Shopping' ? 'bi-bag' : nome === 'Alimentação' ? 'bi-egg-fried' : 'bi-heart';
 

@@ -1,0 +1,146 @@
+/* src/styles/styles-global.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+:root {
+  --cor-branco: #ffffff;
+  --cor-cinza-claro: #f2f2f2;
+  --cor-fundo-escuro: #141c26;
+  --cor-destaque: #3b6cff;
+  
+  --cor-card-dashboard: #24294d;
+  --cor-card-dashboard-claro: #363d64;
+  --cor-sucesso: #28a745;
+  --cor-perigo: #dc3545;
+
+  /* Cores para o Degradê */
+  --cor-degrade-claro: #367aff; 
+  --cor-degrade-escuro: #203573; 
+  
+  --cor-fundo-perfil: #e6e7ec;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--cor-fundo-escuro); 
+  color: var(--cor-cinza-claro);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* CLASSE DE FUNDO PARA LOGIN/CADASTRO E INICIAL (DEGRADÊ LINEAR: ESCURO -> CLARO) */
+.fundo-login-cadastro {
+  background: linear-gradient(180deg, var(--cor-degrade-escuro) 0%, var(--cor-degrade-claro) 100%) !important;
+  color: var(--cor-branco) !important;
+}
+
+/* Classe de Fundo para a página de Perfil */
+.fundo-perfil {
+  background-color: var(--cor-fundo-perfil) !important;
+  color: #3c4043;
+}
+
+/* Estilo para o Card branco de login/cadastro, metas e saldo */
+.card-form-central {
+    background-color: var(--cor-branco) !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    color: #3c4043; 
+}
+
+/* Estilos de Botão de Destaque */
+.btn-destaque {
+    background-color: var(--cor-destaque) !important;
+    border-color: var(--cor-destaque) !important;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+/* ESTILOS GERAIS DA DASHBOARD */
+
+.card-base {
+  background-color: var(--cor-card-dashboard);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: var(--cor-cinza-claro);
+  height: 100%;
+}
+
+.dropdown-mes {
+  background-color: transparent !important;
+  color: var(--cor-cinza-claro) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 0.25rem 1rem !important;
+  font-size: 1rem;
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23f2f2f2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 0.75rem center !important;
+  background-size: 10px 10px !important;
+}
+
+.card-categorias {
+  background-color: rgba(36, 41, 77, 0.6);
+  padding: 1.5rem 1rem;
+  height: 150px; 
+  border-radius: 12px;
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.3), 
+    0 4px 8px rgba(0, 0, 0, 0.3); 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.indicador-progresso-categoria {
+  width: 70px; 
+  height: 8px; 
+  border-radius: 4px;
+  margin-top: 15px;
+  background-color: var(--cor-card-dashboard-claro); 
+  position: relative;
+  overflow: hidden;
+}
+
+.indicador-progresso-cheio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--cor-destaque);
+  border-radius: 4px;
+}
+
+.btn-acao-dashboard {
+  background-color: var(--cor-destaque);
+  color: white;
+  width: 55px; 
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border: none; 
+  display: inline-block; 
+}
+
+.menu-navegacao-fixo {
+    background-color: var(--cor-card-dashboard);
+}
+.btn-flutuante-menu {
+    background-color: var(--cor-destaque);
+    transform: translateY(-25%); 
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}

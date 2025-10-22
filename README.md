@@ -1,16 +1,109 @@
-# React + Vite
+# FinBal Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
+O **FinBal** é um projeto de interface web desenvolvido em **React.js**, **HTML**, **CSS** e **Bootstrap**, com o objetivo de permitir que os usuários controlem sua vida financeira com praticidade e organização.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Estrutura de pastas
 
-## React Compiler
+```
+finbal-frontend/
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── assets/
+│   │   ├── Logo-google.png
+│   │   └── Logo.png
+│   ├── components/
+│   │   ├── Botao.jsx
+│   │   ├── BotaoGoogle.jsx
+│   │   ├── CabecalhoDashboardApp.jsx
+│   │   ├── CabecalhoSimples.jsx
+│   │   ├── CampoInput.jsx
+│   │   ├── CampoPerfil.jsx
+│   │   ├── CampoSelecao.jsx
+│   │   ├── CardsDashboard.jsx
+│   │   ├── MenuNavegacao.jsx
+│   │   └── Rodape.jsx
+│   ├── pages/
+│   │   ├── Cadastro.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── Login.jsx
+│   │   ├── Metas.jsx
+│   │   ├── PaginaInicial.jsx
+│   │   ├── Perfil.jsx
+│   │   └── SaldoInicial.jsx
+│   ├── styles/
+│   │   └── styles-global.css
+│   ├── App.jsx
+│   └── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
+```
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
+- **React.js**
+- **HTML5**
+- **CSS3**
+- **Bootstrap 5**
+- **Vite** (para build e ambiente de desenvolvimento)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Como Executar o Projeto
+
+1. **Clonar o repositório**
+   ```bash
+   git clone https://github.com/seuusuario/finbal-frontend.git
+   ```
+
+2. **Instalar as dependências**
+   ```bash
+   npm install
+   ```
+
+3. **Executar o projeto**
+   ```bash
+   npm run dev
+   ```
+
+4. **Acessar o app**
+   Abra [http://localhost:5173](http://localhost:5173) no navegador.
+
+---
+
+## Estilos Globais
+
+O arquivo `styles-global.css` contém as definições padrão de cores e tipografia utilizadas em todo o projeto, com base nas especificações do Figma:
+
+```css
+:root {
+  --color-background: linear-gradient(0deg, #141C26, #141C26),
+                      linear-gradient(180deg, #000000 -14.31%, #4167D9 79.12%);
+  --color-primary: #4167D9;
+  --color-text: #FFFFFF;
+
+  --font-main: 'Inter', sans-serif;
+  --font-weight-regular: 400;
+}
+```
+
+---
+
+## Autoras
+- **Elise Oliveira**
+- **Lais Sallas**
+- **Gabrielli Martinelli**
+
+---
+
+## Licença
+Projeto desenvolvido para fins acadêmicos — todos os direitos reservados © 2025.

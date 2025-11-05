@@ -7,6 +7,7 @@ import PaginaSaldoInicial from './pages/SaldoInicial.jsx';
 import PaginaLogin from './pages/Login.jsx';
 import PaginaDashboard from './pages/Dashboard.jsx';
 import PaginaPerfil from './pages/Perfil.jsx';
+import Conta from './pages/Conta.jsx';
 
 const PaginaErro = () => <h1>Erro 404 - Página Não Encontrada</h1>;
 export default function App() {

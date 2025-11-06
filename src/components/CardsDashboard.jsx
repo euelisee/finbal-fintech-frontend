@@ -1,9 +1,10 @@
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Link } from 'react-router-dom';
 
 export const Card = ({ titulo, valor, detalhe, tipo, children, estiloExtra }) => {
     const corTitulo = "rgba(255, 255, 255, 0.7)";
-    const tamanhoValor = tipo === "principal" ? "3rem" : "1.5rem";
+    const tamanhoValor = tipo === "principal" ? "2.5rem" : "1.5rem";
 
     return (
         <div
@@ -58,8 +59,17 @@ export const AcaoIcone = ({ icone, texto }) => {
             </div>
         );
 
+        const rotas = {
+    "Contas a pagar": "/dashboard", //ainda não tem página específica
+    "Extrato": "/extrato",
+    "Gráficos": "/dashboard", //ainda não tem página específica
+  };
+
+  const destino = rotas[texto] || "/";
+
     return (
         <div className="text-center" style={{ width: '90px', margin: '0 10px' }}> 
+        <Link to={destino} style={{ textDecoration: 'none' }}>
             <button
                 className="btn-acao-dashboard mb-2" 
                 onClick={() => console.log(`Ação: ${texto}`)}
@@ -67,7 +77,9 @@ export const AcaoIcone = ({ icone, texto }) => {
                 <i className={`bi ${icone}`}></i>
             </button>
             {textoFormatado}
+            </Link>
         </div>
+        
     );
 };
 export const CategoriaCard = ({ nome, progresso = 70 }) => {

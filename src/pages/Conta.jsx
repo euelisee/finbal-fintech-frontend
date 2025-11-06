@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/styles-global.css';
 
-import CabecalhoDashboardApp from "../components/CabecalhoDashboardApp.jsx";
+import CabecalhoSimples from "../components/CabecalhoSimples.jsx";
 import MenuNavegacao from "../components/MenuNavegacao.jsx";
 
 
@@ -210,7 +210,7 @@ export default function Conta() {
     if (isAdding) {
         return (
             <div className="container-contas container my-4">
-                <CabecalhoDashboardApp />
+                <CabecalhoSimples />
                 <div className="colunas row">
                     <div className="clouna-esquerda col">
                         <ContaSemDados />
@@ -232,7 +232,7 @@ export default function Conta() {
     if (isEditing) {
         return (
             <div className="container-contas container my-4">
-                <CabecalhoDashboardApp />
+                <CabecalhoSimples />
                 <div className="colunas row">
                     <div className="clouna-esquerda col">
                         <ContaComDados accountData={accountData} />
@@ -254,7 +254,7 @@ export default function Conta() {
 
     return (
         <div className="cointainer-contas container my-4">
-            <CabecalhoDashboardApp />
+            <CabecalhoSimples />
             {error && (
                 <div className="alert alert-danger" role="alert">
                     {error}

@@ -432,3 +432,67 @@ body {
   width: 100%;
   z-index: 1000;
 }
+
+/* PÁGINA DE EXTRATO!!! */
+
+.container-extrato {
+  margin-top: 4rem;
+  background-color: var(--cor-fundo-secundario);
+  min-height: 80vh;
+  padding: 1rem 1.2rem 6rem;
+  color: white;
+}
+
+.titulo-extrato {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.transacao-resumo {
+  margin-top: 5rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.bloco-data {
+  margin-bottom: 2rem;
+}
+
+.cabecalho-data {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1b2a49;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.linha-movimentacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nome-movimentacao {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.data-hora {
+  font-size: 0.75rem;
+  color: var(--cor-cinza-claro);
+}
+
+.valor-movimentacao {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.saldo-data {
+  font-size: 0.9rem;
+  color: var(--cor-cinza-claro);
+}

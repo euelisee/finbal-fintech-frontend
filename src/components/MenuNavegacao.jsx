@@ -72,10 +72,10 @@ export default function MenuNavegacao() {
 
           <MenuIcone
             icone="bi-arrow-left-right"
-            rota="/transferir"
+            rota="/extrato"
             ativo={false}
           />
-          <MenuIcone icone="bi-wallet2" rota="/carteira" ativo={false} />
+          <MenuIcone icone="bi-wallet2" rota="/conta" ativo={false} />
         </div>
       </div>
     </div>

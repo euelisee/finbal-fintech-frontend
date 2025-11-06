@@ -10,6 +10,7 @@ import PaginaPerfil from './pages/Perfil.jsx';
 import Conta from './pages/Conta.jsx';
 import PaginaTransacaoEntrada from './pages/transacaoEntrada.jsx';
 import PaginaTransacaoSaida from './pages/transacaoSaida.jsx';
+import PaginaExtrato from './pages/Extrato.jsx';
 
 const PaginaErro = () => <h1>Erro 404 - Página Não Encontrada</h1>;
 export default function App() {
@@ -50,6 +51,9 @@ export default function App() {
 
           { }
           <Route path="/transacao-saida" element={<PaginaTransacaoSaida/>} />
+
+          { }
+          <Route path="/extrato" element={<PaginaExtrato/>} />
 
         </Routes>
 

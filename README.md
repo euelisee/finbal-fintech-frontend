@@ -78,6 +78,10 @@ finbal-frontend/
 4. **Acessar o app**
    Abra [http://localhost:5173](http://localhost:5173) no navegador.
 
+5. **Usuario teste para Acessar o app**
+email: netuno.cachorro@finbal.com
+senha: ********
+
 ---
 
 ## Estilos Globais

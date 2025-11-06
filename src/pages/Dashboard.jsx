@@ -6,6 +6,7 @@ import '../styles/styles-global.css';
 import CabecalhoDashboardApp from "../components/CabecalhoDashboardApp"; 
 import MenuNavegacao from "../components/MenuNavegacao";
 import { Card, AcaoIcone, CategoriaCard } from "../components/CardsDashboard"; 
+import ContaResumo from "../components/ContaResumo";
 
 export default function Dashboard() {
     const [mesSelecionado, setMesSelecionado] = useState("Janeiro");
@@ -37,40 +38,8 @@ export default function Dashboard() {
                 <div className="row g-4 mb-5">
                     
                     <div className="col-12 col-lg-7"> 
-                        
-                        <Card
-                            titulo="SUA CONTA"
-                            valor="R$26.563"
-                            tipo="principal"
-                            estiloExtra={{ height: alturaCardConta }} 
-                        >
-                            <div className="d-flex justify-content-center mt-4">
-                                
-                                <div className="text-center mx-5"> 
-                                    <p className="fw-bold mb-0" style={{ color: 'var(--cor-sucesso)', fontSize: "1rem" }}>
-                                        ↑ Entradas
-                                    </p>
-                                    <p className="fw-bold mb-0" style={{ color: 'var(--cor-sucesso)', fontSize: "1.5rem" }}>
-                                        R$27.000
-                                    </p>
-                                </div>
-                                
-                                <div className="text-center mx-5">
-                                    <p className="fw-bold mb-0" style={{ color: 'var(--cor-perigo)', fontSize: "1rem" }}>
-                                        ↓ Saídas
-                                    </p>
-                                    <p className="fw-bold mb-0" style={{ color: 'var(--cor-perigo)', fontSize: "1.5rem" }}>
-                                        R$437
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="d-flex justify-content-center pt-5">
-                                <AcaoIcone icone="bi-file-earmark-text" texto="Contas a pagar" />
-                                <AcaoIcone icone="bi-journal-text" texto="Extrato" />
-                                <AcaoIcone icone="bi-bar-chart-line" texto="Gráficos" />
-                            </div>
-                        </Card>
+                        <ContaResumo />
+                           
 
                     </div>
 

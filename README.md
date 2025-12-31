@@ -5,6 +5,12 @@ O **FinBal** é um projeto de interface web desenvolvido em **React.js**, **HTML
 
 ---
 
+## Assista o vídeo de apresentação do projeto: (clique abaixo)
+[![Video de apresentação - projeto FinBal](https://img.youtube.com/vi/TO_9oOGhZ_s/maxresdefault.jpg)](https://www.youtube.com/watch?v=TO_9oOGhZ_s)
+
+---
+
+
 ## Estrutura de pastas
 
 ```
